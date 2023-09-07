@@ -15,6 +15,7 @@ upercase_characters = list(string.ascii_uppercase)
 punctuation = list(string.punctuation)
 digits = list(string.digits)
 
+
 def clear_terminal():
 
     if os.name == 'posix':  # Linux
@@ -26,11 +27,13 @@ def clear_terminal():
     else:
         print("The operating system could not be determined")
 
+
 def main():
 
     clear_terminal()
 
-    print(Fore.LIGHTCYAN_EX + Style.BRIGHT + fig.renderText("Secure Password Generator") + "\n--------------- Code By @IvanFdez2001 ---------------" + Fore.RESET)
+    print(Fore.LIGHTCYAN_EX + Style.BRIGHT + fig.renderText("Secure Password Generator") +
+          "\n--------------- Code By @IvanFdez2001 ---------------" + Fore.RESET)
     print("\n")
 
     # Ask the user to choose the number of characters
@@ -43,10 +46,10 @@ def main():
     pass_len = num_lowers + num_upers + num_punctuations + num_digits
 
     # Choose different types of characters according to the user's choice
-    rand_lowers = random.choices(lowercase_characters, k = num_lowers)
-    rand_uppers = random.choices(upercase_characters, k = num_upers)
-    rand_punctuations = random.choices(punctuation, k = num_punctuations)
-    rand_digits = random.choices(digits, k = num_digits)
+    rand_lowers = random.choices(lowercase_characters, k=num_lowers)
+    rand_uppers = random.choices(upercase_characters, k=num_upers)
+    rand_punctuations = random.choices(punctuation, k=num_punctuations)
+    rand_digits = random.choices(digits, k=num_digits)
 
     # List of characters to be in the password
     char_list = rand_lowers + rand_uppers + rand_punctuations + rand_digits
@@ -58,6 +61,8 @@ def main():
 
         random.shuffle(char_list)
 
-    print(Fore.BLUE + "Generated password: " + Fore.LIGHTRED_EX + ''.join(char_list) + Fore.RESET)
+    print(Fore.BLUE + "Generated password: " +
+          Fore.LIGHTRED_EX + ''.join(char_list) + Fore.RESET)
+
 
 main()
