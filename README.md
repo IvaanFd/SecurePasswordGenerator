@@ -5,4 +5,4 @@ Python script that generates a secure password from parameters such as length, n
 
 # Necessary dependences
 
-* Pyfiglet:pip install pyfiglet
+* Pyfiglet: pip install pyfiglet
