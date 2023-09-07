@@ -1,4 +1,4 @@
-# SecurePasswordGenerator
+# Secure Password Generator
 
 Python script that generates a secure password from parameters such as length, number of special characters and so on chosen by the user.
 
