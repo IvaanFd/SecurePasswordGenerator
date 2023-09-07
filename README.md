@@ -1,2 +1,8 @@
 # SecurePasswordGenerator
-Script escrito en python que genera una contraseña seguro a partir de los parámetros tales como longitud, número de caracteres especiales y demás elegidos por el usuario
+
+Python script that generates a secure password from parameters such as length, number of special characters and so on chosen by the user.
+
+
+# Necessary dependences
+
+* Pyfiglet:pip install pyfiglet
