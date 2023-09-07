@@ -1,6 +1,6 @@
-import os
 import string
 import random
+import os
 import colorama
 from colorama import Fore, Style
 from pyfiglet import Figlet
@@ -16,14 +16,23 @@ punctuation = list(string.punctuation)
 digits = list(string.digits)
 
 def clear_terminal():
+
     if os.name == 'posix':  # Linux
         os.system('clear')
+
     elif os.name == 'nt':  # Windows
         os.system('cls')
+
     else:
         print("The operating system could not be determined")
 
 def main():
+
+    clear_terminal()
+
+    print(Fore.LIGHTCYAN_EX + Style.BRIGHT + fig.renderText("Secure Password Generator") + "\n--------------- Code By @IvanFdez2001 ---------------" + Fore.RESET)
+    print("\n")
+
     # Ask the user to choose the number of characters
     # of each type they want in their password.
     num_lowers = int(input("How many lowercase characters do you want to? "))
@@ -49,7 +58,6 @@ def main():
 
         random.shuffle(char_list)
 
-    print("Generated password: " + ''.join(char_list))
+    print(Fore.BLUE + "Generated password: " + Fore.LIGHTRED_EX + ''.join(char_list) + Fore.RESET)
 
-clear_terminal()
 main()
