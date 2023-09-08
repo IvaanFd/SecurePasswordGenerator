@@ -28,17 +28,11 @@ def clear_terminal():
         print("The operating system could not be determined")
 
 
-def main():
-
-    clear_terminal()
-
-    print(Fore.LIGHTCYAN_EX + Style.BRIGHT + fig.renderText("Secure Password Generator") +
-          "\n--------------- Code By @IvanFdez2001 ---------------" + Fore.RESET)
-    print("\n")
+def generate_password():
 
     # Ask the user to choose the number of characters
     # of each type they want in their password.
-    num_lowers = int(input("How many lowercase characters do you want to? "))
+    num_lowers = int(input("\nHow many lowercase characters do you want to? "))
     num_upers = int(input("How many upercase characters do you want to? "))
     num_punctuations = int(input("How many punctuation do you want to? "))
     num_digits = int(input("How many digits do you want to? "))
@@ -52,17 +46,27 @@ def main():
     rand_digits = random.choices(digits, k=num_digits)
 
     # List of characters to be in the password
-    char_list = rand_lowers + rand_uppers + rand_punctuations + rand_digits
+    password = rand_lowers + rand_uppers + rand_punctuations + rand_digits
 
     # We shuffle the list of characters a certain number of times
     # to avoid patterns when generating the password
     Z = 3 if pass_len - 3 < 3 else pass_len - 3
     for _ in range(pass_len - len([x for x in range(1, Z)])):
 
-        random.shuffle(char_list)
+        random.shuffle(password)
 
-    print(Fore.BLUE + "Generated password: " +
-          Fore.LIGHTRED_EX + ''.join(char_list) + Fore.RESET)
+    return ''.join(password)
+
+
+def main():
+
+    clear_terminal()
+
+    print(Fore.LIGHTCYAN_EX + Style.BRIGHT + fig.renderText("Secure Password Generator") +
+          "\n--------------- Code By @IvanFdez2001 ---------------" + Fore.RESET)
+
+    print("\n" + Fore.BLUE + "Generated password: " +
+          Fore.LIGHTRED_EX + generate_password() + Fore.RESET + "\n")
 
 
 main()
