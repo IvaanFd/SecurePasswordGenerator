@@ -63,7 +63,7 @@ def main():
     clear_terminal()
 
     print(Fore.LIGHTCYAN_EX + Style.BRIGHT + fig.renderText("Secure Password Generator") +
-          "\n--------------- Code By @IvanFdez2001 ---------------" + Fore.RESET)
+          "\n--------------- Code By @IvaanFd ---------------" + Fore.RESET)
 
     print("\n" + Fore.BLUE + "Generated password: " +
           Fore.LIGHTRED_EX + generate_password() + Fore.RESET + "\n")
